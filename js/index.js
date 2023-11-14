@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    scrollAnimaion();
+    scrollAnimation();
     scrollSpy();
 })
 
-const scrollAnimaion = () => {
+const scrollAnimation = () => {
     $("a").on('click', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
