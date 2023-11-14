@@ -1,0 +1,335 @@
+@font-face {
+    font-family: 'vacationHoney';
+    src: url('/fonts/VacationHoney/Vacation\ Honeymoon.otf');
+}
+
+@font-face {
+    font-family: 'kitchen';
+    src: url('/fonts/Kitchen/Kitchen\ Counter.otf'), url('/fonts/Kitchen/Kitchen\ Counter.ttf');
+}
+
+:root {
+    --primary: #3a0b40;
+    --secondary: #FFEFFE;
+    --tertiary: #EDD7FF;
+}
+
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    background-color: var(--tertiary);
+    height: 70px;
+    overflow: hidden;
+    /*para que no se desborde*/
+    position: fixed;
+    /*quede flotante, pero pegado de un solo lugar*/
+    top: 0;
+    /*arriba*/
+    z-index: 2;
+    display: flex;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(245, 245, 245, 1);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(245, 245, 245, 1);
+    box-shadow: 3px 3px 5px 0px rgba(245, 245, 245, 1);
+}
+
+.navbar .logo {
+    width: 200px;
+    overflow: hidden;
+}
+
+.navbar .logo img {
+    width: 100%;
+}
+
+.navbar ul.menu {
+    width: calc(100% - 200px);
+    margin: 0;
+    list-style: none;
+    /*para que no ponga viñetas*/
+    display: flex;
+    align-items: center;
+    /*centrado vertical*/
+}
+
+.navbar ul.menu li {
+    padding: 0 25px;
+    /*margen interna, el primer número es arriba y abajo, y el segundo es izquierda y derecha*/
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 0px solid var(--primary);
+    transition: border-bottom .05s ease-in-out;
+}
+
+.navbar ul.menu li.active {
+    border-bottom: 3px solid var(--primary);
+}
+
+.navbar ul.menu li a {
+    font-family: 'vacationHoney';
+    font-size: 30px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+
+section {
+    height: calc(100vh - 70px);
+}
+
+.home {
+    background: var(--secondary);
+    width: 100%;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.home .banner img {
+    width: 100%;
+}
+
+.home .promotions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.home .promotions .title {
+    font-family: 'vacationHoney';
+    font-size: 40px;
+    width: 250px;
+    letter-spacing: 3px;
+    display: grid;
+    place-items: center;
+    color: var(--primary);
+}
+
+.home .promotions ul.items {
+
+    margin: 0;
+    list-style: none;
+    width: calc(100% - 250px);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+.home .promotions ul.items li {
+    --s:150px;
+    --b:8px;
+    --g:14px;
+    width: var(--s);
+    height: var(--s);
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(179, 179, 179, 1);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(179, 179, 179, 1);
+    box-shadow: 3px 3px 5px 0px rgba(179, 179, 179, 1);
+    aspect-ratio: 1;
+    outline: calc(var(--s) / 2) solid #0009;
+    outline-offset: calc(var(--s) / -2);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.home .promotions ul.items li:hover{
+    outline: var(--b) solid var(--primary);
+    outline-offset: var(--g);
+}
+
+.home .promotions ul.items li img {
+    height: 100%;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+.about {
+    display: flex;
+    overflow: hidden;
+}
+
+.about .present {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.about .present img {
+    height: 100%;
+}
+
+.about .text {
+    width: 50%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about .text h1 {
+    text-align: center;
+    font-family: 'vacationHoney';
+    font-size: 80px;
+    letter-spacing: 3px;
+    color: var(--primary);
+}
+
+.about .text p {
+    text-align: center;
+    font-family: 'kitchen';
+    font-size: 35px;
+    color: var(--primary);
+}
+
+.collection {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--secondary);
+}
+
+.collection .title h1 {
+    font-family: 'vacationHoney';
+    font-size: 80px;
+    text-align: center;
+    color: var(--primary);
+    margin: 20px 0;
+}
+
+.collection ul.items {
+    margin: 0;
+    list-style: none;
+    padding: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.collection ul.items li {
+    width: calc(100% / 5);
+}
+
+.collection ul.items li h1 {
+    font-family: 'vacationHoney';
+    font-size: 30px;
+    text-align: center;
+    color: var(--primary);
+    margin: 5px 0;
+}
+
+.collection ul.items li img {
+    width: 100%;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(179, 179, 179, 1);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(179, 179, 179, 1);
+    box-shadow: 3px 3px 5px 0px rgba(179, 179, 179, 1);
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contact .title h1{
+    font-family: 'vacationHoney';
+    font-size: 80px;
+    text-align: center;
+    color: var(--primary);
+    margin: 20px 0;
+}
+
+.contact ul.items{
+    margin: 0;
+    list-style: none;
+    padding: 15px 50px;
+    width: 100%;
+}
+
+.contact ul.items li{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact ul.items li h1{
+    font-family: 'kitchen';
+    font-size: 30px;
+    text-align: center;
+    color: var(--primary);
+    margin: 20px 0;
+}
+
+.contact ul.items li .circle{
+    width: 55px;
+    height: 55px;
+    border: 2px solid var(--primary);
+    display: grid;
+    place-items: center;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.contact ul.items li i{
+    font-size: 35px;
+    color: var(--primary);
+}
+
+.contact .sign{
+    font-family: 'kitchen';
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    color: #adadad;
+}
+
+
+/*Scroll*/
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a0b40;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a0b40;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #edd7ff;
+}
+::-webkit-scrollbar-track {
+  background: #ffeffe;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #ffeffe;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
